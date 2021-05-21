@@ -1,5 +1,7 @@
 package com.pluralsight.conferencedemo.models;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
@@ -11,6 +13,7 @@ import java.util.List;
 @Getter
 @Setter
 @NoArgsConstructor
+@JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
 @Entity(name = "speakers")
 public class Speaker {
 
@@ -39,6 +42,10 @@ public class Speaker {
     @Column(name = "speaker_photo")
     private byte[] speakerPhoto;
 
+    /***
+     * @JsonIgnore Jackson library will ignore this field when serializing Speakers
+     */
     @ManyToMany(mappedBy = "speakers")
+    @JsonIgnore
     private List<Session> sessions;
 }
