@@ -17,10 +17,12 @@ public class PersistanceConfiguration {
     /***
      * Customer DataSource bean that overrides the data source configuration from application.properties
      */
-//    @Bean
-//    public DataSource dataSource() {
-//        DataSourceBuilder builder = new DataSourceBuilder.create();
-//        builder.url("jdbc:postgresql://localhost:5432/conference_app");
-//        return builder.build();
-//    }
+    @Bean
+    public DataSource dataSource() {
+        DataSourceBuilder builder =  DataSourceBuilder.create();
+        builder.url("jdbc:postgresql://localhost:5432/conference_app");
+        builder.username("postgres");
+        builder.password("Welcome");
+        return builder.build();
+    }
 }

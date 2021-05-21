@@ -17,6 +17,8 @@ public class ConferenceDemoApplication {
 	 * See springConfigOrder.jpg in screenshots.
 	 * Good practise is to pick one internal sources to provide the majority of configuration
 	 * and pick one external source to provider overrides.
+	 *
+	 * Module 5: Spring embedded containers: Tomcat (default), Jetty, Undertow.
 	 */
 	public static void main(String[] args) {
 		SpringApplication.run(ConferenceDemoApplication.class, args);
