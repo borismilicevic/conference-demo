@@ -1,0 +1,5 @@
+# These properties are combined with application.properties file
+# Even though we can mix these files it is not advised, we should pick one.
+# Environment profiles also work with YAML files by adding -prod in file name
+server:
+  port: 8080
